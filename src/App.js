@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/Navbar';
+import Home from './components/Home';
+import AboutMe from './components/AboutMe';
+import Resume from './components/Resume';
+
+
 
 class App extends Component {
-  render() {
+
+  constructor(props) {
+    super(props);
+
+    // TOGGLE NAV BAR ON SCROLL
+    var prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+      } else {
+      document.getElementById("navbar").style.top = "-5em";
+      }
+    prevScrollpos = currentScrollPos;
+    }
+  };
+   
+  
+    render() {
+
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <NavBar id="navbar"/>
+        <Home/>
+        <AboutMe/>
+        <Resume/>
       </div>
     );
   }
 }
 
 export default App;
+
+
