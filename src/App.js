@@ -4,6 +4,16 @@ import NavBar from './components/Navbar';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
 import Resume from './components/Resume';
+import PortfolioScreen from './components/PortfolioScreen';
+
+
+// REDUCERS
+import projects from './Reducers/projects.reducer'
+
+// REDUX
+import {Provider} from 'react-redux';
+import {createStore, combineReducers}  from 'redux';
+const store = createStore(combineReducers({projects}));
 
 
 
@@ -31,12 +41,15 @@ class App extends Component {
 
 
     return (
-      <div>
-        <NavBar id="navbar"/>
-        <Home/>
-        <AboutMe/>
-        <Resume/>
-      </div>
+      <Provider store={store}>
+        <div>
+          <NavBar id="navbar"/>
+          <Home/>
+          <AboutMe/>
+          <PortfolioScreen/>
+          <Resume/>
+        </div>
+      </Provider>
     );
   }
 }
