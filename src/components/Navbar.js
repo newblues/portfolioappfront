@@ -48,7 +48,7 @@ class NavBar extends React.Component {
   render() {
     return (
       
-        <Navbar id='navbar' style={style.container} className='fixed-top' color="light" light expand="md">
+        <Navbar id='navbar' style={style.container} className='fixed-top animated fadeInDown delay-0.8s' color="light" light expand="md">
           <NavbarBrand href="/">〈 A.S	〉</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

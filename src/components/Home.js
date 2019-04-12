@@ -3,34 +3,59 @@ import { FaAngleDoubleDown } from 'react-icons/fa';
 import '../App.css';
 import { HashLink as Link } from 'react-router-hash-link';
 
-
+const Home = () => {
+  return (
+    <div>
+      <div id='home' style={style.container}>
+        <div style={style.titleContainer}>
+          <h1 class='animated fadeInLeft delay-0.8s' style={style.mainTitle}>
+            ANTOINE SAUVAGE
+          </h1>
+          <h2 class='animated fadeInRight delay-0.8s' style={style.subTitle}>
+            FULL-STACK DEVELOPPER
+          </h2>
+        </div>
+      </div>
+      <Link className='animated fadeInDown delay-0,8s' style={style.arrow} to='/#aboutme'>
+        <FaAngleDoubleDown />
+      </Link>
+    </div>
+  );
+};
 
 const style = {
   container: {
     position: 'relative',
     // height: 'calc(100vh - 50px)',
-    height: '100vh',
+    height: '95vh',
     background:
-      'linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url("https://picsum.photos/1000?image=756")',
+      'linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url("https://picsum.photos/1000?image=798")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
-
-
+    clipPath: 'polygon(0 0, 100% 0, 100% 80vh, 0 100%)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     color: 'white',
-
     fontFamily: 'Montserrat'
   },
-
+  mainTitle: {
+    fontSize: 36,
+    fontWeight: 700,
+    letterSpacing: 5
+  },
+  subTitle: {
+    fontSize: 17,
+    fontWeight: 600,
+    letterSpacing: 8
+  },
   arrow: {
     position: 'absolute',
-    bottom: '50px',
-    fontSize: '25px',
-    color: 'white'
+    right: 50,
+    bottom: 40,
+    fontSize: '25px'
   },
   titleContainer: {
     display: 'flex',
@@ -54,22 +79,6 @@ const style = {
     left: '50%',
     marginLeft: '-1px'
   }
-};
-
-const Home = () => {
-  return (
-    <div id='home'  style={style.container}>
-      <div class='animated fadeInUp delay-0.8s' style={style.titleContainer}>
-        <h1>ANTOINE SAUVAGE</h1>
-        <h3>FULL-STACK DEVELOPER</h3>
-      </div>
-      <div style={style.arrow} class='animated fadeInDown delay-0.8s'>
-        <div class='animated infinite pulse delay-0s' >
-        <Link  to="/#aboutme"> <FaAngleDoubleDown /></Link>      
-        </div>
-      </div>
-    </div>
-  );
 };
 
 export default Home;
