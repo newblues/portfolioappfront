@@ -42,6 +42,7 @@ const styles = theme => ({
     transform: 'rotate(180deg)'
   },
   avatar: {
+    padding: 8,
     backgroundColor: red[500]
   }
 });
@@ -54,6 +55,7 @@ class Project extends React.Component {
   };
 
   render() {
+    
     let stackFront = this.props.stack_front.map((e, i) => {
       return (
         <Badge key={i} color='secondary' style={{ padding: 5, margin: 5 }}>
@@ -73,7 +75,7 @@ class Project extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Col xs='12' md='6' lg='4'>
+      <Col id='portfolio'  xs='12' md='6' lg='4'>
         <Card className={classes.card}>
           <CardHeader
             className={classes.cardHeader}

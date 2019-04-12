@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+*{
+  scroll-behavior: smooth;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -13,5 +17,5 @@ p{
 }
 
 #navbar {
-  transition: 0.5s
+  transition: 0.8s
 }

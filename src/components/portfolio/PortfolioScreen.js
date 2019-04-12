@@ -16,7 +16,7 @@ class PortfolioScreen extends Component {
 
   componentDidMount = () => {
     // API ALL PROJECTS
-    fetch('http://localhost:3000/api/capsule/projects')
+    fetch('https://capsule-exams.herokuapp.com/api/capsule/projects')
       .then(res => res.json())
       .then(data => {
         this.props.handleProjects(data.projects);
