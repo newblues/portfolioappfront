@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import './App.css';
 import './animate.css';
+
 import NavBar from './components/Navbar';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
-import Resume from './components/Resume';
-import PortfolioScreen from './components/portfolio/PortfolioScreen';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 // REDUCERS
 import projects from './Reducers/projects.reducer';
@@ -40,9 +42,11 @@ class App extends Component {
         <Router>
           <div className='app'>
             <NavBar id='navbar' />
-            <Home/>
-            <AboutMe/>
-            <PortfolioScreen/>
+            <Home />
+            <AboutMe />
+            <Skills />
+            <Projects />
+            {/* <PortfolioScreen/> */}
           </div>
         </Router>
       </Provider>

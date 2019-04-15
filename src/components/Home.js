@@ -8,10 +8,10 @@ const Home = () => {
     <div>
       <div id='home' style={style.container}>
         <div style={style.titleContainer}>
-          <h1 class='animated fadeInLeft delay-0.8s' style={style.mainTitle}>
+          <h1 className='animated fadeInLeft delay-0.8s' style={style.mainTitle}>
             ANTOINE SAUVAGE
           </h1>
-          <h2 class='animated fadeInRight delay-0.8s' style={style.subTitle}>
+          <h2 className='animated fadeInRight delay-0.8s' style={style.subTitle}>
             FULL-STACK DEVELOPPER
           </h2>
         </div>
@@ -43,13 +43,14 @@ const style = {
   },
   mainTitle: {
     fontSize: 36,
-    fontWeight: 700,
-    letterSpacing: 5
+    fontWeight: 600,
+    letterSpacing: 5,
   },
   subTitle: {
     fontSize: 17,
-    fontWeight: 600,
-    letterSpacing: 8
+    fontWeight: 400,
+    letterSpacing: 8,
+
   },
   arrow: {
     position: 'absolute',
