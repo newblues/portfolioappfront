@@ -9,11 +9,11 @@ class Skills extends Component {
     return (
       <div style={style.container} id='skills'>
         <Container>
-        <Row>
-          <Col xs='12' className='text-center'>
-            <h3 className='sectionTitle'>Compétences</h3>
-          </Col>
-        </Row>
+          <Row>
+            <Col xs='12' className='text-center'>
+              <h3 className='sectionTitle'>Compétences</h3>
+            </Col>
+          </Row>
           <Row>
             <Col style={style.col} xs='12' sm='4'>
               <ScrollAnimation animateIn='bounceIn'>
@@ -23,15 +23,16 @@ class Skills extends Component {
                   alt='Logo'
                 />
               </ScrollAnimation>
-              
+
               <h4 className='sectionSubtitle'>Front-End</h4>
-              <p style={style.p}>React and Redux</p>
+              <p style={style.p}>React JS, React Native</p>
+              <p style={style.p}>Redux</p>
               <p style={style.p}>JavaScript(es6), JQuery</p>
               <p style={style.p}>HTML5</p>
               <p style={style.p}>CSS, Sass</p>
             </Col>
             <Col style={style.col} xs='12' sm='4'>
-            <ScrollAnimation animateIn='bounceIn'>
+              <ScrollAnimation animateIn='bounceIn'>
                 <img
                   style={style.logo}
                   src={require('../images/database.svg')}
@@ -45,17 +46,17 @@ class Skills extends Component {
               <p style={style.p}>Cloudinary</p>
             </Col>
             <Col style={style.col} xs='12' sm='4'>
-            <ScrollAnimation animateIn='bounceIn'>
+              <ScrollAnimation animateIn='bounceIn'>
                 <img
                   style={style.logo}
                   src={require('../images/settings.svg')}
                   alt='Logo'
                 />
               </ScrollAnimation>
-              <h4 className='sectionSubtitle'>Build Tool</h4>
+              <h4 className='sectionSubtitle'>Build Tools</h4>
               <p style={style.p}>Npm, Yarn</p>
               <p style={style.p}>Webpack, Babel</p>
-              <p style={style.p}>Git, Git-GitHub</p>
+              <p style={style.p}>Git, GitHub</p>
             </Col>
           </Row>
         </Container>
@@ -72,10 +73,10 @@ const style = {
     minheight: '50vh',
     fontFamily: 'Montserrat',
     marginTop: 50,
-    marginBottom: 50,
+    marginBottom: 50
   },
   col: {
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
   },

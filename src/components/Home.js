@@ -3,25 +3,84 @@ import { FaAngleDoubleDown } from 'react-icons/fa';
 import '../App.css';
 import { HashLink as Link } from 'react-router-hash-link';
 
-const Home = () => {
-  return (
-    <div>
-      <div id='home' style={style.container}>
-        <div style={style.titleContainer}>
-          <h1 className='animated fadeInLeft delay-0.8s' style={style.mainTitle}>
-            ANTOINE SAUVAGE
-          </h1>
-          <h2 className='animated fadeInRight delay-0.8s' style={style.subTitle}>
-            FULL-STACK DEVELOPPER
-          </h2>
+import { connect } from 'react-redux';
+
+import { Button } from 'reactstrap';
+import { isAbsolute } from 'path';
+
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: this.props.language
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.language !== this.props.language) {
+      this.setState({ language: this.props.language });
+      console.log(
+        'TCL: Home -> constructor -> state.language',
+        this.state.language
+      );
+      console.log('TCL: Home -> this.props.language', this.props.language);
+    }
+  }
+
+  handleClick = e => {
+    console.log('je suis dans mon click!!!');
+    this.props.setLanguage(e);
+    this.setState({
+      language: this.props.language
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <div id='home' style={style.container}>
+          <div style={style.titleContainer}>
+            <h1
+              className='animated fadeInLeft delay-0.8s'
+              style={style.mainTitle}
+            >
+              ANTOINE SAUVAGE
+            </h1>
+            <h2
+              className='animated fadeInRight delay-0.8s'
+              style={style.subTitle}
+            >
+              FULL-STACK DEVELOPPER
+            </h2>
+          </div>
+        </div>
+        <div style={style.buttonContainer}>
+          {this.state.language == 'en' ? (
+            <Button
+              value='fr'
+              onClick={this.handleClick}
+              outline
+              color='secondary'
+              className='shadow p-2 rounded btn-block'
+            >
+              Français
+            </Button>
+          ) : (
+            <Button
+              value='en'
+              onClick={this.handleClick}
+              outline
+              color='secondary'
+              className='shadow p-2 rounded btn-block'
+            >
+              English
+            </Button>
+          )}
         </div>
       </div>
-      <Link className='animated fadeInDown delay-0,8s' style={style.arrow} to='/#aboutme'>
-        <FaAngleDoubleDown />
-      </Link>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const style = {
   container: {
@@ -41,16 +100,24 @@ const style = {
     color: 'white',
     fontFamily: 'Montserrat'
   },
+  buttonContainer: {
+    width: 100,
+    position: 'absolute',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    right: 40,
+    bottom: 40
+  },
   mainTitle: {
     fontSize: 36,
     fontWeight: 600,
-    letterSpacing: 5,
+    letterSpacing: 5
   },
   subTitle: {
     fontSize: 17,
     fontWeight: 400,
-    letterSpacing: 8,
-
+    letterSpacing: 8
   },
   arrow: {
     position: 'absolute',
@@ -82,4 +149,25 @@ const style = {
   }
 };
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    language: state.language
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setLanguage: function(language) {
+      // console.log('dispatch ------------->', language.target.value)
+      dispatch({
+        type: 'switchLanguage',
+        language: language.target.value
+      });
+    }
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

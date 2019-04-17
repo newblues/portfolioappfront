@@ -20,20 +20,22 @@ class Porfolio extends Component {
 
           <Row className='rowPorfolio'>
             <Col
-              xs='6'
+              xs='12' md='6'
               className='d-flex justify-content-center align-items-center'
             >
-              <div className='shadow rounded projectImg'>
-                <img
-                  className='projectImg'
-                  style={style.img}
-                  src='https://picsum.photos/1000?image=20'
-                  alt='Logo'
-                />
-              </div>
+              <ScrollAnimation animateIn='fadeInLeft'>
+                <div className='shadow rounded projectImg'>
+                  <img
+                    className='projectImg'
+                    style={style.img}
+                    src='https://picsum.photos/1000?image=20'
+                    alt='Logo'
+                  />
+                </div>
+              </ScrollAnimation>
             </Col>
             <Col
-              xs='6'
+              xs='12' md='6'
               className='d-flex flex-column justify-content-center align-items-center'
             >
               <div style={style.header}>
@@ -76,9 +78,8 @@ class Porfolio extends Component {
             </Col>
           </Row>
           <Row>
-        
             <Col
-              xs='6'
+              xs='12' md='6'
               className='d-flex flex-column justify-content-center align-items-center'
             >
               <div style={style.header}>
@@ -120,17 +121,19 @@ class Porfolio extends Component {
               </div>
             </Col>
             <Col
-              xs='6'
+              xs='12' md='6'
               className='d-flex justify-content-center align-items-center'
             >
-              <div className='shadow rounded projectImg'>
-                <img
-                  className='projectImg'
-                  style={style.img}
-                  src='https://picsum.photos/1000?image=20'
-                  alt='Logo'
-                />
-              </div>
+              <ScrollAnimation animateIn='fadeInRight'>
+                <div className='shadow rounded projectImg'>
+                  <img
+                    className='projectImg'
+                    style={style.img}
+                    src='https://picsum.photos/1000?image=20'
+                    alt='Logo'
+                  />
+                </div>
+              </ScrollAnimation>
             </Col>
           </Row>
         </Container>
@@ -152,11 +155,10 @@ const style = {
   containerImg: {
     boxShadow: '5px 5px 5px #9E9E9E'
   },
-  header:{
+  header: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center',
-
+    justifyContent: 'center'
   },
   logo: {
     width: 50,
@@ -170,8 +172,7 @@ const style = {
     display: 'flex',
     justifyContent: 'space-around',
     marginTop: 25
-  },
-
+  }
 };
 
 export default Porfolio;

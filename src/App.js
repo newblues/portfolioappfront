@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 import './App.css';
 import './animate.css';
@@ -11,12 +11,12 @@ import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 
 // REDUCERS
-import projects from './Reducers/projects.reducer';
+import language from './Reducers/language.reducer';
 
 // REDUX
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-const store = createStore(combineReducers({ projects }));
+const store = createStore(combineReducers({ language }));
 
 class App extends Component {
   constructor(props) {
