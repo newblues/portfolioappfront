@@ -69,8 +69,10 @@ const style = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
-    fontFamily: 'Montserrat'
+    minheight: '50vh',
+    fontFamily: 'Montserrat',
+    marginTop: 50,
+    marginBottom: 50,
   },
   col: {
     display: 'flex', 

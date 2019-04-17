@@ -8,7 +8,7 @@ import NavBar from './components/Navbar';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
+import Portfolio from './components/Portfolio';
 
 // REDUCERS
 import projects from './Reducers/projects.reducer';
@@ -45,8 +45,7 @@ class App extends Component {
             <Home />
             <AboutMe />
             <Skills />
-            <Projects />
-            {/* <PortfolioScreen/> */}
+            <Portfolio/>
           </div>
         </Router>
       </Provider>
