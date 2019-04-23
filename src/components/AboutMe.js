@@ -40,10 +40,17 @@ class AboutMe extends Component {
                   alt='Logo'
                 />
               </ScrollAnimation>
-              <h4 className='sectionSubtitle'>
-                {language == 'fr' ? 'Qui je suis' : 'About me'}
-              </h4>
-              <p>"Lore ehjfdkh gdm "</p>
+              {language === 'fr' ? (
+                <div>
+                  <h4 className='sectionSubtitle'>Mon histoire</h4>
+                  <p>Salut c'est moi!</p>
+                </div>
+              ) : (
+                <div>
+                  <h4 className='sectionSubtitle'>My story</h4>
+                  <p>Hello it's me!</p>
+                </div>
+              )}
             </Col>
             <Col xs='12' sm='4' className='text-center'>
               <img
@@ -61,16 +68,30 @@ class AboutMe extends Component {
                   alt='Logo'
                 />
               </ScrollAnimation>
-              <h4 className='sectionSubtitle'>
-                {' '}
-                {language == 'fr' ? 'Informations' : 'Personal infomations'}
-              </h4>
-              <p style={style.infoText}>Nom : Antoine Sauvage</p>
-              <p style={style.infoText}>Age : 35 ans</p>
-              <p style={style.infoText}>Tel : 06 88 84 71 10</p>
-              <p style={style.infoText}>
-                Email : <a href={`mailto:${email}`}>anto.sauvage@gmail.com</a>
-              </p>
+              {language === 'fr' ? (
+                <div>
+                  <h4 className='sectionSubtitle'>Informations </h4>
+
+                  <p style={style.infoText}>Nom : Antoine Sauvage</p>
+                  <p style={style.infoText}>Age : 35 ans</p>
+                  <p style={style.infoText}>Tel : 06 88 84 71 10</p>
+                  <p style={style.infoText}>
+                    Email :{' '}
+                    <a href={`mailto:${email}`}>anto.sauvage@gmail.com</a>
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <h4 className='sectionSubtitle'>Personal Details </h4>
+                  <p style={style.infoText}>Full name : Antoine Sauvage</p>
+                  <p style={style.infoText}>Age : 35 years old</p>
+                  <p style={style.infoText}>Phone : +33 6 88 84 71 10</p>
+                  <p style={style.infoText}>
+                    Email :{' '}
+                    <a href={`mailto:${email}`}>anto.sauvage@gmail.com</a>
+                  </p>
+                </div>
+              )}
             </Col>
           </Row>
         </Container>

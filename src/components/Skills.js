@@ -25,7 +25,7 @@ class Skills extends Component {
               </ScrollAnimation>
 
               <h4 className='sectionSubtitle'>Front-End</h4>
-              <p style={style.p}>React JS, React Native</p>
+              <p style={style.p}>React JS, React Native, Expo</p>
               <p style={style.p}>Redux</p>
               <p style={style.p}>JavaScript(es6), JQuery</p>
               <p style={style.p}>HTML5</p>
