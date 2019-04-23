@@ -6,6 +6,7 @@
     "codeFrame": false
   },
   "extends": ["airbnb", "prettier"],
+  "plugins": ["no-unused-expressions"],
   "env": {
     "browser": true,
     "jest": true
@@ -16,6 +17,7 @@
     "react/jsx-filename-extension": ["off"],
     "react/destructuring-assignment": [true, { "extensions": [".jsx"] }],
     "react/prop-types": ["warn"],
-    "no-return-assign": ["off"]
+    "no-return-assign": ["off"],
+    "no-unused-expressions/no-unused-expressions": 2
   }
 }
