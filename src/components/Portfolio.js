@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import '../App.css';
-
-import colors from '../config.js';
 
 const Porfolio = props => {
   return (

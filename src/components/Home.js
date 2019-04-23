@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import { FaAngleDoubleDown } from 'react-icons/fa';
+import React from 'react';
 import '../App.css';
-import { HashLink as Link } from 'react-router-hash-link';
 
 import { connect } from 'react-redux';
 
 import { Button } from 'reactstrap';
-import { isAbsolute } from 'path';
 
 class Home extends React.Component {
   constructor(props) {
@@ -46,7 +43,7 @@ class Home extends React.Component {
           </div>
         </div>
         <div style={style.buttonContainer}>
-          {this.state.language == 'en' ? (
+          {this.state.language === 'en' ? (
             <Button
               value="fr"
               onClick={this.handleClick}
